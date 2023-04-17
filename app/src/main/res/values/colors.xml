@@ -3,6 +3,7 @@
     <color name="colorPrimary">#000000</color>
     <color name="colorPrimaryDark">#000000</color>
     <color name="colorAccent">#000000</color>
+    <color name="white">#FFFFFF</color>
 <!--    <color name="overlayBackground">#7f333639</color>-->
 <!--    <color name="overlayActionBar">#7f333639</color>-->
 </resources>

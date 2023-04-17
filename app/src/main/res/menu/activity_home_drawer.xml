@@ -10,20 +10,20 @@
             android:height="20sp"
             android:color="@android:color/white"
             android:icon="@drawable/spoon"
-            android:title="Menu" />
+            android:title="Thực đơn" />
         <item
             android:id="@+id/nav_cart"
             android:height="20sp"
             android:color="@android:color/white"
             android:icon="@drawable/shopping_cart"
-            android:title="Cart" />
+            android:title="Giỏ hàng" />
 
         <item
             android:id="@+id/nav_orders"
             android:height="20sp"
             android:color="#FFFFFF"
             android:icon="?attr/actionModePasteDrawable"
-            android:title="Orders" />
+            android:title="Đơn hàng" />
 
 
         <item
@@ -31,7 +31,7 @@
             android:height="20sp"
             android:color="@android:color/white"
             android:icon="@drawable/logout"
-            android:title="Sign Out" />
+            android:title="Đăng xuất" />
 
     </group>
 </menu>

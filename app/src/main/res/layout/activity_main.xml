@@ -60,22 +60,4 @@
         android:scaleType="centerCrop"
         app:srcCompat="@drawable/bitesize_logo_white" />
 
-    <TextView
-        android:id="@+id/slogan"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignStart="@id/imageView3"
-        android:layout_alignEnd="@id/imageView3"
-
-        android:layout_marginTop="300dp"
-        android:layout_marginBottom="1dp"
-        android:fadingEdge="horizontal|vertical"
-        android:fontFamily="@font/montserrat"
-        android:gravity="center"
-        android:text="@string/slogan2"
-        android:textStyle="italic"
-        android:textColor="@android:color/white"
-        android:textSize="18sp" />
-
-
 </RelativeLayout>
