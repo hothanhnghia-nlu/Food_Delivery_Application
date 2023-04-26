@@ -17,7 +17,7 @@ import androidx.core.app.NotificationCompat;
 
 import com.example.food_delivery_app.Common.Common;
 import com.example.food_delivery_app.OrderStatus;
-import com.example.food_delivery_app.Model.Request;
+import com.example.food_delivery_app.Model.Order;
 import com.example.food_delivery_app.R;
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
@@ -62,12 +62,12 @@ public class ListenOrder extends Service implements ChildEventListener {
     public void onChildChanged(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
 
             //Trigger
-            Request request = dataSnapshot.getValue(Request.class);
-            showNotification(dataSnapshot.getKey(),request);
+            Order order = dataSnapshot.getValue(Order.class);
+            showNotification(dataSnapshot.getKey(), order);
     }
 
     @RequiresApi(api = Build.VERSION_CODES.N)
-    private void showNotification(String key, Request request) {
+    private void showNotification(String key, Order order) {
 
         NotificationManager notificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
         String NOTIFICATION_CHANNEL_ID = "channel_id_01";
@@ -87,11 +87,11 @@ public class ListenOrder extends Service implements ChildEventListener {
 
 
         Intent intent = new Intent(getBaseContext(), OrderStatus.class);
-        intent.putExtra("userPhone", request.getPhone());
+        intent.putExtra("userPhone", order.getPhone());
         PendingIntent contentIntent = PendingIntent.getActivity(getBaseContext(), 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
 //        Toast.makeText(getBaseContext(),"showNotif",Toast.LENGTH_SHORT).show();
 
-        String r = "Order #" + key + " was updated to " + Common.convertCodeToStatus(request.getStatus());
+        String r = "Order #" + key + " was updated to " + Common.convertCodeToStatus(order.getStatus());
         if(Common.currentUser.getPhone().equals("7080102453")) {
             r = "You have recieved a discount of 10% for being a regular customer";
         }

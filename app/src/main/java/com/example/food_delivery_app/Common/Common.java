@@ -14,10 +14,10 @@ public class Common {
 
     public static String convertCodeToStatus(String status) {
         if(status.equals("0"))
-            return "Order Placed";
+            return "Đang xử lý";
         else if(status.equals("1"))
-            return "On My Way!";
+            return "Đang vận chuyển";
         else
-            return "Order Delivered";
+            return "Giao hàng thành công";
     }
 }

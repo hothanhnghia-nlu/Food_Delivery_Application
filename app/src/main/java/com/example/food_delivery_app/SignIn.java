@@ -53,6 +53,7 @@ public class SignIn extends AppCompatActivity {
                                 Intent homeIntent = new Intent(SignIn.this, Home.class);
                                 Common.currentUser = user;
                                 startActivity(homeIntent);
+                                overridePendingTransition(R.anim.anim_in_right, R.anim.anim_out_left);
                                 finish();
                             } else {
                                 Toast.makeText(SignIn.this, "Incorrect password.", Toast.LENGTH_SHORT).show();

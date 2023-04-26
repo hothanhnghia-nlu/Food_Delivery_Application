@@ -43,14 +43,14 @@
 
                 <RadioButton
                     android:id = "@+id/rdiShipToAddress"
-                    android:text="Ship To This Address"
+                    android:text="Giao đến địa chỉ này"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
                 </RadioButton>
 
                 <RadioButton
                     android:id = "@+id/rdiHomeAddress"
-                    android:text = "Home Address"
+                    android:text = "Địa chỉ nhà"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
                 </RadioButton>
@@ -58,7 +58,7 @@
 
             <com.rengwuxian.materialedittext.MaterialEditText
                 android:id = "@+id/edtpay"
-                android:text = " Payment Method"
+                android:text = " Phương thức thanh toán"
                 android:focusable="false"
                 android:clickable="false"
                 android:layout_margin="2dp"
@@ -74,15 +74,22 @@
 
                 <RadioButton
                     android:id = "@+id/rdiCashOnDelivery"
-                    android:text="Cash On Delivery"
+                    android:text="Thanh toán khi giao hàng"
                     android:checked="true"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
                 </RadioButton>
 
                 <RadioButton
-                    android:id = "@+id/rdiPayNow"
-                    android:text = "Pay Now"
+                    android:id = "@+id/rdiPayEWAllet"
+                    android:text = "Thanh toán qua Ví điện tử"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                </RadioButton>
+
+                <RadioButton
+                    android:id = "@+id/rdiPayATMCard"
+                    android:text = "Thanh toán qua Thẻ ATM"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
                 </RadioButton>
