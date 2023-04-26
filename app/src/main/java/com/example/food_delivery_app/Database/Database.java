@@ -5,7 +5,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteQueryBuilder;
 
-import com.example.food_delivery_app.Model.Order;
+import com.example.food_delivery_app.Model.OrderDetail;
 import com.readystatesoftware.sqliteasset.SQLiteAssetHelper;
 
 import java.util.ArrayList;
@@ -21,7 +21,7 @@ public class Database extends SQLiteAssetHelper {
     }
 
 
-    public List<Order> getCarts() {
+    public List<OrderDetail> getCarts() {
         SQLiteDatabase db = getReadableDatabase();
         SQLiteQueryBuilder qb = new SQLiteQueryBuilder();
 
@@ -30,10 +30,10 @@ public class Database extends SQLiteAssetHelper {
 
         qb.setTables(sqlTable);
         Cursor c = qb.query(db, sqlSelect, null, null, null, null,null);
-        final List<Order> result = new ArrayList<>();
+        final List<OrderDetail> result = new ArrayList<>();
         if(c.moveToFirst()) {
             do {
-                result.add(new Order(c.getString(c.getColumnIndex("ProductId")),
+                result.add(new OrderDetail(c.getString(c.getColumnIndex("ProductId")),
                         c.getString(c.getColumnIndex("ProductName")),
                         c.getString(c.getColumnIndex("Quantity")),
                         c.getString(c.getColumnIndex("Price")),
@@ -44,14 +44,14 @@ public class Database extends SQLiteAssetHelper {
         return result;
     }
 
-    public void addToCart(Order order) {
+    public void addToCart(OrderDetail od) {
         SQLiteDatabase db = getReadableDatabase();
         String query = String.format("INSERT INTO OrderDetail(ProductId, ProductName, Quantity, Price, Discount) VALUES ('%s', '%s','%s','%s','%s');",
-                order.getProductId(),
-                order.getProductName(),
-                order.getQuantity(),
-                order.getPrice(),
-                order.getDiscount());
+                od.getProductId(),
+                od.getProductName(),
+                od.getQuantity(),
+                od.getPrice(),
+                od.getDiscount());
         db.execSQL(query);
     }
 

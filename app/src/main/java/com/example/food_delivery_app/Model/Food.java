@@ -1,7 +1,13 @@
 package com.example.food_delivery_app.Model;
 
 public class Food {
-    private String name, image, description, price, discount, menuId;
+    private String id;
+    private String name;
+    private String image;
+    private String description;
+    private String price;
+    private String discount;
+    private String menuId;
 
     public Food() {
 
@@ -14,6 +20,14 @@ public class Food {
         this.price = price;
         this.discount = discount;
         this.menuId = menuId;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getName() {

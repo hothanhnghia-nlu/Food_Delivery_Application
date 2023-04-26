@@ -22,6 +22,7 @@ public class Launch extends AppCompatActivity {
                 } finally {
                     Intent intent = new Intent(Launch.this, MainActivity.class);
                     startActivity(intent);
+                    overridePendingTransition(R.anim.anim_in_right, R.anim.anim_out_left);
                 }
             }
         };

@@ -1,59 +1,69 @@
 package com.example.food_delivery_app.Model;
 
 public class User {
-    private String Name;
-    private String Password;
-    private String Phone;
-    private String IsStaff;
-    private String Mail;
+    private String id;
+    private String name;
+    private String password;
+    private String phone;
+    private String isStaff;
+    private String mail;
+
     public User() {
 
     }
 
     public String getIsStaff() {
-        return IsStaff;
+        return isStaff;
     }
 
     public void setIsStaff(String isStaff) {
-        IsStaff = isStaff;
+        this.isStaff = isStaff;
     }
 
     public User(String name, String password, String mail) {
-        Name = name;
-        Password = password;
-        Mail = mail;
-        IsStaff = "false";
+        this.name = name;
+        this.password = password;
+        this.mail = mail;
+        isStaff = "false";
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getMail() {
-        return Mail;
+        return mail;
     }
 
     public void setMail(String mail) {
-        Mail = mail;
+        this.mail = mail;
     }
 
     public String getPhone() {
-        return Phone;
+        return phone;
     }
 
     public void setPhone(String phone) {
-        Phone = phone;
+        this.phone = phone;
     }
 
     public String getName() {
-        return Name;
+        return name;
     }
 
     public void setName(String name) {
-        Name = name;
+        this.name = name;
     }
 
     public void setPassword(String password) {
-        Password = password;
+        this.password = password;
     }
 
     public String getPassword() {
-        return Password;
+        return password;
     }
 }

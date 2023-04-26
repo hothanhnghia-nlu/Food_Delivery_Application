@@ -17,8 +17,8 @@
 
     <string name="Open">Open</string>
     <string name="Close">Close</string>
-    <string name="Rs">\u20B9</string>
-    <string name="Cart">U+1F6D2</string>
+    <string name="Rs">\u20AB</string>
+    <string name="Cart">U+20AB</string>
 
     <string name="menu_home">Home</string>
     <string name="menu_gallery">Gallery</string>
@@ -26,7 +26,7 @@
 
     <string name="home_second">Home Second</string>
     <string name="food_name">Food Name</string>
-    <string name="_1000">\u20B91000</string>
+    <string name="_1000">\u20AB1000</string>
     <string name="total">Tổng cộng : </string>
     <string name="place_order">Thanh toán</string>
     <string name="select_item_size">Chọn size</string>

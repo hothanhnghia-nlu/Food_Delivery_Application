@@ -14,7 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.amulyakhare.textdrawable.TextDrawable;
 import com.example.food_delivery_app.Interface.ItemClickListener;
-import com.example.food_delivery_app.Model.Order;
+import com.example.food_delivery_app.Model.OrderDetail;
 import com.example.food_delivery_app.R;
 
 import java.text.NumberFormat;
@@ -47,10 +47,10 @@ class CartViewHolder extends RecyclerView.ViewHolder implements View.OnClickList
 }
 
 public class CartAdapter extends RecyclerView.Adapter<CartViewHolder> {
-    private List<Order> listData = new ArrayList<>();
+    private List<OrderDetail> listData = new ArrayList<>();
     private Context context;
 
-    public CartAdapter(List<Order> listData, Context context) {
+    public CartAdapter(List<OrderDetail> listData, Context context) {
         this.listData = listData;
         this.context = context;
     }
@@ -72,7 +72,7 @@ public class CartAdapter extends RecyclerView.Adapter<CartViewHolder> {
         holder.img_cart_count.setImageDrawable(drawable);
 
 
-        Locale locale = new Locale("en", "IN");
+        Locale locale = new Locale("vi", "VN");
         NumberFormat fmt = NumberFormat.getCurrencyInstance(locale);
         double price = (Double.parseDouble(listData.get(position).getPrice()))*(Integer.parseInt(listData.get(position).getQuantity()));
         holder.txt_price.setText(fmt.format(price));
