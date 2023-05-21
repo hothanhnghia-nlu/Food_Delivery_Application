@@ -9,20 +9,20 @@
         android:id="@+id/tv_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginTop="10dp"
         android:ellipsize="end"
         android:maxLines="1"
         android:text="Nhập đánh giá"
         android:textAlignment="center"
         android:textColor="@color/black"
-        android:textSize="@dimen/_16ssp"
+        android:textSize="16sp"
         app:layout_constraintTop_toTopOf="parent" />
 
     <View
         android:id="@+id/view"
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginTop="10dp"
         android:background="@color/black"
         app:layout_constraintTop_toBottomOf="@id/tv_title" />
 
@@ -31,7 +31,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:numStars="5"
-        android:layout_marginStart="@dimen/_20sdp"
+        android:layout_marginStart="20dp"
         android:rating="3.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/view" />
@@ -45,8 +45,8 @@
         app:layout_constraintTop_toBottomOf="@id/rb"
         android:lines="8"
         android:id="@+id/edt_comment"
-        android:layout_marginStart="@dimen/_20sdp"
-        android:layout_marginEnd="@dimen/_20sdp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
         android:maxLines="10"
         android:minLines="6"
         android:scrollbars="vertical" />
@@ -62,12 +62,12 @@
         app:layout_constraintTop_toBottomOf="@id/edt_comment"
         android:maxLines="1"
         android:id="@+id/bt_send"
-        android:layout_marginTop="@dimen/_10sdp"
-        android:layout_marginStart="@dimen/_40sdp"
-        android:layout_marginEnd="@dimen/_40sdp"
-        android:padding="@dimen/_10sdp"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="40dp"
+        android:padding="10dp"
         android:ellipsize="end"
-        android:textSize="@dimen/_11ssp"
+        android:textSize="11sp"
         android:textColor="@color/white"
         android:background="@color/red"
         />
