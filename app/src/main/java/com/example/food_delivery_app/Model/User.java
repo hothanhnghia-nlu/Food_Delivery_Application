@@ -1,7 +1,10 @@
 package com.example.food_delivery_app.Model;
 
+import com.google.firebase.database.annotations.Nullable;
+
 public class User {
     private String id;
+    @Nullable
     private String name;
     private String password;
     private String phone;
