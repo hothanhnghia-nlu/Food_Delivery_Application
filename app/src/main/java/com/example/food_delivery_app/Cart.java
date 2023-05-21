@@ -114,7 +114,8 @@ public class Cart extends AppCompatActivity implements GoogleApiClient.Connectio
         btnPlaceOrder = findViewById(R.id.btnPlaceOrder);
         btnClearCart = findViewById(R.id.btnClearCart);
 
-        // Bước 7: Nhập địa chỉ giao hàng và chọn phương thức thanh toán
+        // Bước 5: Nhấn nút Thanh toán
+        // Bước 6: Màn hình hiển thị dialog Thanh toán
         btnPlaceOrder.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -268,6 +269,30 @@ public class Cart extends AppCompatActivity implements GoogleApiClient.Connectio
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 edtAddress.setText("TRƯỜNG ĐẠI HỌC NÔNG LÂM TP.HCM");
                 distancek = 10.345;
+            }
+        });
+
+        // Bước 7.1: Thanh toán bằng tiền mặt
+        rdiCashOnDelivery.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                Toast.makeText(Cart.this, "Quý khách vui lòng thanh toán sau khi nhận hàng", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        // Bước 7.2: Thanh toán qua Ví điện tử
+        rdiPayEWallet.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                Toast.makeText(Cart.this, "Quý khách thanh toán qua Momo, ZaloPay hoặc VNPay", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        // Bước 7.3: Thanh toán qua thẻ ATM (Internet Banking)
+        rdiPayATM.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                Toast.makeText(Cart.this, "Quý khách chuyển khoản qua các nền tảng Internet Banking", Toast.LENGTH_SHORT).show();
             }
         });
 
