@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/order_completed_nav"
+    app:startDestination="@id/listCompletedFragment">
+
+    <fragment
+        android:id="@+id/listCompletedFragment"
+        android:name="com.example.food_delivery_app.order_completed.ListCompletedFragment"
+        android:label="fragment_list_completed"
+        tools:layout="@layout/fragment_list_completed" >
+        <action
+            android:id="@+id/action_listCompletedFragment_to_rateCommentFrgment"
+            app:enterAnim="@anim/anim_in_right"
+            app:exitAnim="@anim/anim_out_left"
+            app:popEnterAnim="@anim/anim_in_left"
+            app:popExitAnim="@anim/anim_out_right"
+            app:destination="@id/rateCommentFrgment" />
+    </fragment>
+    <fragment
+        android:id="@+id/rateCommentFrgment"
+        android:name="com.example.food_delivery_app.order_completed.RateCommentFragment"
+        app:enterAnim="@anim/anim_in_right"
+        app:exitAnim="@anim/anim_out_left"
+        app:popEnterAnim="@anim/anim_in_left"
+        app:popExitAnim="@anim/anim_out_right"
+        android:label="fragment_rate_comment_frgment"
+        tools:layout="@layout/fragment_rate_comment_frgment" />
+</navigation>
