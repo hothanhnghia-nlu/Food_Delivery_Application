@@ -32,7 +32,7 @@ public class CustomDialogClass extends Dialog implements
         this.c = a;
         this.id = id;
     }
-
+//  Bước 9. Hệ thống hiển thị hộp thoại bao gồm số sao và nội dung đã đánh giá của đơn hang đó.
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -59,7 +59,7 @@ public class CustomDialogClass extends Dialog implements
             tvErr.setVisibility(View.VISIBLE);
         }
     }
-
+//  Bước 10.	Nhấn vào nút đóng để thoát hộp thoại.
     @Override
     public void onClick(View v) {
         switch (v.getId()) {

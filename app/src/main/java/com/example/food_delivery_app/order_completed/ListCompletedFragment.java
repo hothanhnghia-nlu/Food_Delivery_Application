@@ -23,7 +23,7 @@ public class ListCompletedFragment extends BaseFragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
     }
-
+//    Bước 1:	Người dùng truy cập trang đánh giá từ các màn hình menu.
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -41,7 +41,7 @@ public class ListCompletedFragment extends BaseFragment {
     private void initView() {
 
     }
-
+//    Bước 2: Hệ thống hiển thị trang đơn hàng đã giao thành công
     private void initRev(){
         orderCompletedViewModel.setList();
         // set up the RecyclerView

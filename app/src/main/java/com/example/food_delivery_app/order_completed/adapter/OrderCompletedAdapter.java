@@ -41,6 +41,7 @@ public class OrderCompletedAdapter extends RecyclerView.Adapter<OrderCompletedAd
 
     @Override
     public void onBindViewHolder(@NonNull final NoteVH holder, int position) {
+//      Bước 4.	Người dùng nhấn vào nút đánh giá để xác lập đánh giá
         holder.bindData(mNoteList.get(position));
         holder.btRate.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -50,6 +51,7 @@ public class OrderCompletedAdapter extends RecyclerView.Adapter<OrderCompletedAd
                 Navigation.findNavController(holder.itemView).navigate(R.id.action_listCompletedFragment_to_rateCommentFrgment, bundle);
             }
         });
+//      Bước 8.	Người dùng nhấn vào nút xem đánh giá để xem lại nội dung đánh giá.
         holder.btViewDetail.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -77,6 +79,8 @@ public class OrderCompletedAdapter extends RecyclerView.Adapter<OrderCompletedAd
             notifyItemInserted(mNoteList.size());
         }
     }
+
+//   Bước 3.	Người dùng xem thông tin đơn hàng và chọn đơn hàng cần đánh giá.
 
     @Override
     public int getItemCount() {

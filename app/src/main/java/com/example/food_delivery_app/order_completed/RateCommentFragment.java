@@ -25,7 +25,7 @@ public class RateCommentFragment extends BaseFragment {
     private RatingBar rb;
     private Button btSend;
 
-
+//  Bước 5.	Hệ thống hiển thị form đánh giá đơn hàng.
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -35,12 +35,13 @@ public class RateCommentFragment extends BaseFragment {
     @Override
     public void onViewCreated(@NonNull final View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+//      Bước 6.	Người dùng chọn số sao và nhập nội dung để đánh giá đơn hàng.
         edtComment = getView().findViewById(R.id.edt_comment);
         rb = getView().findViewById(R.id.rb);
         btSend = getView().findViewById(R.id.bt_send);
 
 
-
+//      Bước 7.	Nhấn nút gửi đánh giá sẽ lưu trữ đánh giá thành công vào csdl của hệ thống và quay lại trang giao diện đánh giá.
         btSend.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
