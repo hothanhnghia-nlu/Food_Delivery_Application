@@ -32,6 +32,7 @@ public class OrderStatus extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_order_status);
 
+        // Bước 8.2: Hệ thống lưu dữ liệu chi tiết đơn hàng vào Database
         database = FirebaseDatabase.getInstance();
         requests = database.getReference("Requests");
 
@@ -48,7 +49,7 @@ public class OrderStatus extends AppCompatActivity {
         overridePendingTransition(R.anim.anim_in_right, R.anim.anim_out_left);
     }
 
-    // Bước 8.2: Hệ thống trả dữ liệu và hiển thị thông tin đơn hàng lên trang Đơn hàng
+    // Bước 8.3: Hệ thống trả dữ liệu và hiển thị thông tin đơn hàng lên trang Đơn hàng
     private void loadOrders(String phone) {
         adapter = new FirebaseRecyclerAdapter<Order, OrderViewHolder>(
                 Order.class,

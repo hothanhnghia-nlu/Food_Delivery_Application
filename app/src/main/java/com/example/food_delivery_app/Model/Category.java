@@ -1,7 +1,6 @@
 package com.example.food_delivery_app.Model;
 
 public class Category {
-    private String id;
     private String name;
     private String image;
 
@@ -12,14 +11,6 @@ public class Category {
     public Category(String name, String image) {
         this.name = name;
         this.image = image;
-    }
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
     }
 
     public String getName() {
