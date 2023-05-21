@@ -12,6 +12,7 @@ import com.example.food_delivery_app.Interface.ItemClickListener;
 import com.example.food_delivery_app.Model.Category;
 import com.example.food_delivery_app.Service.ListenOrder;
 import com.example.food_delivery_app.ViewHolder.MenuViewHolder;
+import com.example.food_delivery_app.order_completed.RatingActivity;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
@@ -40,6 +41,7 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
     FirebaseRecyclerAdapter<Category, MenuViewHolder> adapter;
     RecyclerView recycler_menu;
     RecyclerView.LayoutManager layoutManager;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -67,7 +69,7 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
         drawer.setDrawerListener(toggle);
 
         mAppBarConfiguration = new AppBarConfiguration.Builder(
-                )
+        )
                 .setDrawerLayout(drawer)
                 .build();
         toggle.syncState();
@@ -77,7 +79,8 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
 
         View headerView = navigationView.getHeaderView(0);
         txtfullName = headerView.findViewById(R.id.txtfullName);
-        txtfullName.setText(Common.currentUser.getName());
+        if (Common.currentUser.getName() != null)
+            txtfullName.setText(Common.currentUser.getName());
         txtfullName.setTextSize(20);
 
 
@@ -98,7 +101,8 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
         adapter = new FirebaseRecyclerAdapter<Category, MenuViewHolder>(Category.class, R.layout.menu_item, MenuViewHolder.class, category) {
             @Override
             protected void populateViewHolder(MenuViewHolder menuViewHolder, Category category, int i) {
-                menuViewHolder.txtMenuName.setText(category.getName());
+                if (category.getName() != null)
+                    menuViewHolder.txtMenuName.setText(category.getName());
                 Picasso.with(getBaseContext()).load(category.getImage()).into(menuViewHolder.imageView);
                 final Category clickItem = category;
                 menuViewHolder.setItemClickListener(new ItemClickListener() {
@@ -117,7 +121,7 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
     @Override
     public void onBackPressed() {
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        if(drawer.isDrawerOpen(GravityCompat.START))
+        if (drawer.isDrawerOpen(GravityCompat.START))
             drawer.closeDrawer(GravityCompat.START);
         else
             super.onBackPressed();
@@ -141,19 +145,18 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
 
         int id = item.getItemId();
-        if(id == R.id.nav_cart) {
+        if (id == R.id.nav_cart) {
             Intent cartIntent = new Intent(Home.this, Cart.class);
             startActivity(cartIntent);
-        }
-        else if (id == R.id.nav_menu) {
+        } else if (id == R.id.nav_menu) {
 
-        }
-        else if (id == R.id.nav_orders) {
+        } else if (id == R.id.nav_orders) {
 //            Toast.makeText(getApplicationContext(),"in home",Toast.LENGTH_SHORT);
             Intent orderIntent = new Intent(Home.this, OrderStatus.class);
             startActivity(orderIntent);
-        }
-        else {
+        } else if (id == R.id.nav_rating) {
+            startActivity(new Intent(this, RatingActivity.class));
+        } else {
             Intent signIn = new Intent(Home.this, SignIn.class);
             signIn.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
             startActivity(signIn);

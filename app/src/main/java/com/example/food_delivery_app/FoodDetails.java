@@ -15,7 +15,7 @@ import android.widget.Toast;
 import com.cepheuen.elegantnumberbutton.view.ElegantNumberButton;
 import com.example.food_delivery_app.Database.Database;
 import com.example.food_delivery_app.Model.Food;
-import com.example.food_delivery_app.Model.Order;
+import com.example.food_delivery_app.Model.OrderDetail;
 import com.google.android.material.appbar.CollapsingToolbarLayout;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -54,6 +54,7 @@ public class FoodDetails extends AppCompatActivity {
 
         radioFoodSize = findViewById(R.id.food_size);
 
+        // Bước 1.1: Chọn size món ăn
         radioFoodSize.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
@@ -69,6 +70,7 @@ public class FoodDetails extends AppCompatActivity {
             }
         });
 
+        // Bước 2: Thêm món ăn vào giỏ hàng
         btnCart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -82,14 +84,18 @@ public class FoodDetails extends AppCompatActivity {
 //                    price = String.valueOf(Integer.parseInt(currentFood.getPrice())*2);
 //                else
 //                    price = String.valueOf(Integer.parseInt(currentFood.getPrice())*3);
-                new Database(getBaseContext()).addToCart(new Order(
+
+                // Bước 2.1: Hệ thống thêm dữ liệu vào giỏ hàng
+                new Database(getBaseContext()).addToCart(new OrderDetail(
                         foodId,
                         currentFood.getName(),
                         elegantNumberButton.getNumber(),
                         price,
                         currentFood.getDiscount()
                 ));
-                Toast.makeText(FoodDetails.this, "Added to Cart", Toast.LENGTH_SHORT).show();
+                Toast.makeText(FoodDetails.this, "Đã thêm vào giỏ hàng", Toast.LENGTH_SHORT).show();
+                finish();
+                overridePendingTransition(R.anim.anim_in_left, R.anim.anim_out_right);
             }
         });
         food_description = findViewById(R.id.food_description);
@@ -108,6 +114,7 @@ public class FoodDetails extends AppCompatActivity {
         if(!foodId.isEmpty()) {
             getDetailFood(foodId);
         }
+        overridePendingTransition(R.anim.anim_in_right, R.anim.anim_out_left);
     }
 
     private void getDetailFood(String foodId) {
@@ -120,7 +127,7 @@ public class FoodDetails extends AppCompatActivity {
                 if(price.charAt(0)== 'S')
                     food_price.setText(price);
                 else
-                    food_price.setText('\u20B9' +  price);
+                    food_price.setText(price + " \u20AB");
                 food_name.setText(currentFood.getName());
                 food_description.setText(currentFood.getDescription());
             }
@@ -130,5 +137,11 @@ public class FoodDetails extends AppCompatActivity {
 
             }
         });
+    }
+
+    @Override
+    public void finish() {
+        super.finish();
+        overridePendingTransition(R.anim.anim_in_left, R.anim.anim_out_right);
     }
 }

@@ -17,8 +17,8 @@
 
     <string name="Open">Open</string>
     <string name="Close">Close</string>
-    <string name="Rs">\u20B9</string>
-    <string name="Cart">U+1F6D2</string>
+    <string name="Rs">\u20AB</string>
+    <string name="Cart">U+20AB</string>
 
     <string name="menu_home">Home</string>
     <string name="menu_gallery">Gallery</string>
@@ -26,9 +26,18 @@
 
     <string name="home_second">Home Second</string>
     <string name="food_name">Food Name</string>
-    <string name="_1000">\u20B91000</string>
+    <string name="_1000">\u20AB1000</string>
     <string name="total">Tổng cộng : </string>
     <string name="place_order">Thanh toán</string>
     <string name="select_item_size">Chọn size</string>
     <string name="clear_cart">Xóa</string>
+    <string name="txt_order_completed">Đơn hàng đã giao thành công</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="txt_description_rate">Nội dung đánh giá:</string>
+    <string name="txt_dont_have_rating">Chưa có đánh giá nào</string>
+    <string name="txt_rating_title">Nội dung đánh giá</string>
+    <string name="txt_close">Đóng</string>
+    <string name="txt_rating">Đánh giá</string>
+    <string name="txt_view_detail">Xem nội dung</string>
 </resources>

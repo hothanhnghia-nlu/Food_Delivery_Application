@@ -22,7 +22,7 @@ public class FoodList extends AppCompatActivity {
     RecyclerView.LayoutManager layoutManager;
 
     FirebaseDatabase database;
-    DatabaseReference foodlist;
+    DatabaseReference foodList;
     String CategoryId = "";
     FirebaseRecyclerAdapter<Food, FoodViewHolder> adapter;
     @Override
@@ -31,7 +31,7 @@ public class FoodList extends AppCompatActivity {
         setContentView(R.layout.activity_food_list);
 
         database = FirebaseDatabase.getInstance();
-        foodlist = database.getReference("Foods");
+        foodList = database.getReference("Foods");
 
         recycler_menu = (RecyclerView) findViewById(R.id.recycler_food);
         recycler_menu.setHasFixedSize(true);
@@ -43,15 +43,16 @@ public class FoodList extends AppCompatActivity {
         }
 
         if(!CategoryId.isEmpty() && CategoryId != null) {
-            loadfoodlist(CategoryId);
+            loadFoodList(CategoryId);
         }
+        overridePendingTransition(R.anim.anim_in_right, R.anim.anim_out_left);
     }
 
-    private void loadfoodlist(String categoryId) {
+    private void loadFoodList(String categoryId) {
         adapter = new FirebaseRecyclerAdapter<Food, FoodViewHolder> (Food.class,
                 R.layout.food_item,
                 FoodViewHolder.class,
-                foodlist.orderByChild("menuId").equalTo(categoryId)) {
+                foodList.orderByChild("menuId").equalTo(categoryId)) {
 
                 @Override
                 protected void populateViewHolder(FoodViewHolder viewHolder, Food model, int position) {
@@ -71,5 +72,11 @@ public class FoodList extends AppCompatActivity {
 
         };
         recycler_menu.setAdapter(adapter);
+    }
+
+    @Override
+    public void finish() {
+        super.finish();
+        overridePendingTransition(R.anim.anim_in_left, R.anim.anim_out_right);
     }
 }

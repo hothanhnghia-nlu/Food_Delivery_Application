@@ -1,60 +1,91 @@
 package com.example.food_delivery_app.Model;
 
+import java.util.List;
+
 public class Order {
-    private String ProductId;
-    private String ProductName;
-    private String Quantity;
-    private String Price;
-    private String Discount;
+    private String id;
+    private String phone;
+    private String name;
+    private String address;
+    private String total;
+    private List<OrderDetail> foods;
+    private String status;
+    private String distance;
 
     public Order() {
     }
 
-    public Order(String productId, String productName, String quantity, String price, String discount) {
-        ProductId = productId;
-        ProductName = productName;
-        Quantity = quantity;
-        Price = price;
-        Discount = discount;
+    public Order(String phone, String name, String address, String total, List<OrderDetail> foods, String distance) {
+        this.phone = phone;
+        this.name = name;
+        this.address = address;
+        this.total = total;
+        this.foods = foods;
+        this.status = "0";
+        this.distance = distance;
     }
 
-    public String getProductId() {
-        return ProductId;
+    public String getId() {
+        return id;
     }
 
-    public void setProductId(String productId) {
-        ProductId = productId;
+    public void setId(String id) {
+        this.id = id;
     }
 
-    public String getProductName() {
-        return ProductName;
+    public String getDistance() {
+        return distance;
     }
 
-    public void setProductName(String productName) {
-        ProductName = productName;
+    public void setDistance(String distance) {
+        this.distance = distance;
     }
 
-    public String getQuantity() {
-        return Quantity;
+    public void setStatus(String status) {
+        this.status = status;
     }
 
-    public void setQuantity(String quantity) {
-        Quantity = quantity;
+    public String getStatus() {
+        return status;
     }
 
-    public String getPrice() {
-        return Price;
+    public String getPhone() {
+        return phone;
     }
 
-    public void setPrice(String price) {
-        Price = price;
+    public void setPhone(String phone) {
+        this.phone = phone;
     }
 
-    public String getDiscount() {
-        return Discount;
+    public String getName() {
+        return name;
     }
 
-    public void setDiscount(String discount) {
-        Discount = discount;
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public String getTotal() {
+        return total;
+    }
+
+    public void setTotal(String total) {
+        this.total = total;
+    }
+
+    public List<OrderDetail> getFoods() {
+        return foods;
+    }
+
+    public void setFoods(List<OrderDetail> foods) {
+        this.foods = foods;
     }
 }
