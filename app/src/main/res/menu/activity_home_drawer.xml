@@ -25,6 +25,12 @@
             android:icon="?attr/actionModePasteDrawable"
             android:title="Đơn hàng" />
 
+        <item
+            android:id="@+id/nav_rating"
+            android:height="20sp"
+            android:color="#FFFFFF"
+            android:icon="@drawable/baseline_edit_note_24"
+            android:title="Đánh giá" />
 
         <item
             android:id="@+id/nav_signout"
