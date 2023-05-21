@@ -14,9 +14,9 @@
         android:minWidth="0dp"
         android:maxLines="1"
         android:id="@+id/bt_main"
-        android:padding="5dp"
+        android:padding="@dimen/_5sdp"
         android:ellipsize="end"
-        android:textSize="11sp"
+        android:textSize="@dimen/_11ssp"
         android:textColor="@color/white"
         android:background="@color/red"
         />
