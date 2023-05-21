@@ -14,26 +14,29 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity
+            android:name=".order_completed.RatingActivity"
+            android:exported="false" />
 
         <service
-            android:name="com.example.food_delivery_app.Service.ListenOrder"
+            android:name=".Service.ListenOrder"
             android:enabled="true"
-            android:exported="true"></service>
+            android:exported="true" />
 
-        <activity android:name="com.example.food_delivery_app.OrderStatus" />
-        <activity android:name="com.example.food_delivery_app.Cart" />
-        <activity android:name="com.example.food_delivery_app.FoodDetails" />
-        <activity android:name="com.example.food_delivery_app.FoodList" />
-        <activity android:name="com.example.food_delivery_app.PaymentGateway" />
+        <activity android:name=".OrderStatus" />
+        <activity android:name=".Cart" />
+        <activity android:name=".FoodDetails" />
+        <activity android:name=".FoodList" />
+        <activity android:name=".PaymentGateway" />
         <activity
-            android:name="com.example.food_delivery_app.Home"
+            android:name=".Home"
             android:label="@string/title_activity_home"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name="com.example.food_delivery_app.SignUp" />
-        <activity android:name="com.example.food_delivery_app.SignIn" />
-        <activity android:name="com.example.food_delivery_app.MainActivity"/>
+        <activity android:name=".SignUp" />
+        <activity android:name=".SignIn" />
+        <activity android:name=".MainActivity" />
         <activity
-            android:name="com.example.food_delivery_app.Launch"
+            android:name=".Launch"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -41,6 +44,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
